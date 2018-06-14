@@ -1,6 +1,5 @@
 <html>
 <?php 
-include "menu.inc";
 include "includes.inc";
 $gameid = $_GET["gameid"];
     if(isset($_GET["id"]))
@@ -16,6 +15,7 @@ $query = "INSERT INTO Scores(instance, gameid, id, score, dateadded) VALUES(NULL
 
     if (!($result = $mysqli->query($query)))
             showerror($mysqli->errno,$mysqli->error);
-    
+    $_SESSION["message"] = "Data succesfully added.";
+    header("Location: index.php");
 ?>
 </html>

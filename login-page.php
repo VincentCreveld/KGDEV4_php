@@ -1,4 +1,5 @@
 <?php
+echo "hoi";
 include("includes.inc");
 
 

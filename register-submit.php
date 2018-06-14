@@ -52,7 +52,8 @@ $insertQuery = "INSERT INTO Users(id, email, username, password, dateofbirth, ge
     if (!($result = $mysqli->query($insertQuery)))
             showerror($mysqli->errno,$mysqli->error);
     else{
-        header("Location: /~vincent.creveld/KGDEV4/registered.php");
+        $_SESSION["message"] = "Registration succesful, try logging in.";
+        header("Location: /~vincent.creveld/KGDEV4/login-page.php");
         exit;
     }
 ?>
